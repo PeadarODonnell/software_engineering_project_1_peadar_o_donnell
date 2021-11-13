@@ -3,17 +3,18 @@ pipeline {
     stages {
         stage('the cleaning stage') {
             steps {
-                sh './gradlew clean'
+                bat 'dir'
+                bat 'gradle.bat clean'
             }
         }
         stage('the building stage') {
             steps {
-                sh './gradlew build'
+                bat 'gradle.bat build'
             }
         }
         stage('the testing stage, 30 tests') {
             steps {
-                sh './gradlew test'
+                bat 'gradle.bat test'
             }
         }
     }
